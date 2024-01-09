@@ -7,39 +7,6 @@ let userDetail;
 let all_student_list = [];
 let all_appointment_list = [];
 
-let countryData = [
-  {
-    country:'US',
-    state:['California','Texas','New York','Florida','Illinois']
-  },
-  {
-    country:'UK',
-    state:['England','Scotland','Wales','Northern Ireland','London']
-  },
-  {
-    country:'Canada',
-    state:['Ontario','Quebec','British Columbia','Alberta','Manitoba']
-  },
-]
-
-if (window.location.pathname.includes('studentform')) {
-  let element = '<option disabled value="" selected>Select Country</option>';
-  for (const item of countryData) {
-    element += `<option value=${item.country}>${item.country}</option>`
-  }
-  document.getElementById('country').innerHTML = element;
-}
-
-function selectCountry(){
-  const val = document.getElementById('country').value;
-  const stateval = countryData.find((ele)=>ele.country === val).state;
-  let element = '<option disabled value="" selected>Select State</option>';
-  for (const item of stateval) {
-    element += `<option value=${item}>${item}</option>`
-  }
-  document.getElementById('state').innerHTML = element;
-}
-
 
 if (localStorage.getItem('user_detail')) {
   userDetail = JSON.parse(localStorage.getItem('user_detail'));
