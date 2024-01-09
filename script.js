@@ -46,7 +46,7 @@ if (localStorage.getItem('user_detail')) {
   if (window.location.pathname.includes('dashboard')) {
     document.getElementById('user_name').innerText = userDetail.username;
   }
-  if (window.location.pathname.includes('login')) {
+  if (window.location.pathname.includes('index')) {
     window.location.href = './dashboard.html';
   }
 } else {
@@ -55,13 +55,13 @@ if (localStorage.getItem('user_detail')) {
     window.location.pathname.includes('reports') ||
     window.location.pathname.includes('studentform')
   ) {
-    window.location.href = './login.html';
+    window.location.href = './index.html';
   }
 }
 
 function logout() {
   localStorage.removeItem('user_detail');
-  window.location.href = './login.html';
+  window.location.href = './index.html';
 }
 
 async function handleLogin(event) {
